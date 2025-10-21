@@ -1,0 +1,21 @@
+// Biến SCSS mặc định
+$primary-color-light: #3498db;
+$primary-color-dark: #2980b9;
+$secondary-color-light: #2c3e50;
+$secondary-color-dark: #34495e;
+$background-light: #ffffff;
+$background-dark: #1a1a1a;
+
+// Ánh xạ thành CSS Custom Properties
+:root {
+  --primary-color: #{$primary-color-light};
+  --secondary-color: #{$secondary-color-light};
+  --background-color: #{$background-light};
+}
+
+// Chế độ dark mode
+[data-theme="dark"] {
+  --primary-color: #{$primary-color-dark};
+  --secondary-color: #{$secondary-color-dark};
+  --background-color: #{$background-dark};
+}

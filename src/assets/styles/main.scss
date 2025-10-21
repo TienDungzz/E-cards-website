@@ -1,0 +1,8 @@
+@use './variables.scss' as *;
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: var(--background-color);
+  color: var(--secondary-color);
+}
