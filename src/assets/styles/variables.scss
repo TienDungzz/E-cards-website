@@ -1,17 +1,45 @@
-// Biến SCSS mặc định
-$primary-color-light: #3498db;
-$primary-color-dark: #2980b9;
-$secondary-color-light: #2c3e50;
-$secondary-color-dark: #34495e;
-$background-light: #ffffff;
-$background-dark: #1a1a1a;
+//Color
+$light-background: #ffffff;
+$light-border-input: #919191;
+$light-overlay: linear-gradient(to right, rgba(3, 3, 3, 0.7) 0%, rgba(3, 3, 3, 0.7) 70%, rgba(3, 3, 3, 1) 100%);
+$light-placeholder-input: #919191;
+$light-primary-heading: #333333;
+$light-primary-text: #333333;
+$light-primary-btn: #B4853E;
+$light-primary-bg-btn: #ffffff;
+$light-primary-border-btn: rgba(0, 0, 0, 0.3);
+$light-primary-box-shadaw-btn: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+$light-primary-btn-hover: #ffffff;
+$light-primary-bg-btn-hover: linear-gradient(135deg, #ffc978, #b4853e);
+$light-second-btn: #333333;
+$light-second-bg-btn: #ffffff;
+$light-second-border-btn: none;
+$light-second-box-shadaw-btn: none;
+$light-second-btn-hover: #ffffff;
+$light-second-bg-btn-hover: #FFC978;
 
 // Ánh xạ thành CSS Custom Properties
 :root {
-  --primary-color: #{$primary-color-light};
-  --secondary-color: #{$secondary-color-light};
-  --background-color: #{$background-light};
+    --background: #{$light-background};
+    --border-input: #{$light-border-input};
+    --placeholder-input: #{$light-placeholder-input};
+    --overlay: #{$light-overlay};
+    --primary-heading: #{$light-primary-heading};
+    --primary-text: #{$light-primary-text};
+    --primary-btn: #{$light-primary-btn};
+    --primary-bg-btn: #{$light-primary-bg-btn};
+    --primary-border-btn: #{$light-primary-border-btn};
+    --primary-box-shadaw-btn: #{$light-primary-box-shadaw-btn};
+    --primary-btn-hover: #{$light-primary-btn-hover};
+    --primary-bg-btn-hover: #{$light-primary-bg-btn-hover};
+    --second-btn: #{$light-second-btn};
+    --second-bg-btn: #{$light-second-bg-btn};
+    --second-border-btn: #{$light-second-border-btn};
+    --second-box-shadaw-btn: #{$light-second-box-shadaw-btn};
+    --second-btn-hover: #{$light-second-btn-hover};
+    --second-bg-btn-hover: #{$light-second-bg-btn-hover};
 }
+
 
 // Chế độ dark mode
 [data-theme="dark"] {
