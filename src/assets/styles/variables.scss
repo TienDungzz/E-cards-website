@@ -1,3 +1,5 @@
+//Container
+$container-width: 1770px;
 //Color
 $light-background: #ffffff;
 $light-border-input: #919191;
@@ -17,9 +19,13 @@ $light-second-border-btn: none;
 $light-second-box-shadaw-btn: none;
 $light-second-btn-hover: #ffffff;
 $light-second-bg-btn-hover: #FFC978;
+$light-icon: #333333;
 
 // Ánh xạ thành CSS Custom Properties
 :root {
+    --container-width: #{$container-width};
+
+
     --background: #{$light-background};
     --border-input: #{$light-border-input};
     --placeholder-input: #{$light-placeholder-input};
@@ -38,12 +44,5 @@ $light-second-bg-btn-hover: #FFC978;
     --second-box-shadaw-btn: #{$light-second-box-shadaw-btn};
     --second-btn-hover: #{$light-second-btn-hover};
     --second-bg-btn-hover: #{$light-second-bg-btn-hover};
-}
-
-
-// Chế độ dark mode
-[data-theme="dark"] {
-  --primary-color: #{$primary-color-dark};
-  --secondary-color: #{$secondary-color-dark};
-  --background-color: #{$background-dark};
+    --icon: #{$light-icon};
 }

@@ -1,6 +1,11 @@
 {
-  "home": {
-    "title": "Home",
-    "welcome": "Welcome to the Home Page!"
+  "header": {
+    "light": "Light",
+    "dard": "Dark",
+    "store": "Store",
+    "login": "Login",
+    "en": "en",
+    "vi": "vi",
+    "scan_your_card": "Scan your card"
   }
 }

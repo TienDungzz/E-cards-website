@@ -8,8 +8,7 @@ const i18n = createI18n({
   locale: localStorage.getItem('language') || 'en', // Ngôn ngữ mặc định
   fallbackLocale: 'en', // Ngôn ngữ dự phòng
   messages: {
-    en,
-    vi,
+    en
   },
 });
 
