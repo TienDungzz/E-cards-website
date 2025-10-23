@@ -10,6 +10,39 @@ body {
     padding-right: 15px;
 }
 
+$grid-breakpoints: (
+  xs: 0,
+  s: 576px,
+  m: 768px,
+  l: 992px,
+  xl: 1024px,
+  xxl: 1400px
+);
+
+@mixin display-utilities {
+  $display-values: block, none, flex, grid;
+  @each $display in $display-values {
+    .d-#{$display} {
+      display: #{$display};
+    }
+
+    @each $breakpoint, $min-width in $grid-breakpoints {
+      @if $min-width != 0 {
+        @media (min-width: $min-width) {
+          .d-#{$breakpoint}-#{$display} {
+            display: #{$display} !important;
+          }
+        }
+      }
+    }
+  }
+}
+@include display-utilities;
+
+img {
+    max-width: 100%;
+}
+
 .btn-diagonal {
     position: relative;
     overflow: hidden;

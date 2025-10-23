@@ -1,4 +1,6 @@
 .header {
+    box-shadow: var(--box-shadow);
+    background-color: var(--background);
     .header-wrapper {
         gap: 40px;
         position: relative;
@@ -7,26 +9,25 @@
         .header-item {
             .group-icon-wrapper {
                 gap: 24px;
-                .group-icon-item {
-                    display: flex;
-                    align-items: center;
-                    cursor: pointer;
-                    &:has(.icon-wrapper + .text) {
-                        gap: 16px;
+            }
+            .group-icon-item {
+                align-items: center;
+                cursor: pointer;
+                &:has(.icon-wrapper + .text) {
+                    gap: 16px;
+                }
+                .icon-wrapper {
+                    svg {
+                        width: 44px;
+                        height: 44px;
+                        color: var(--icon);
                     }
-                    .icon-wrapper {
-                        svg {
-                            width: 44px;
-                            height: 44px;
-                            color: var(--icon);
-                        }
-                    }
-                    .text {
-                        text-transform: uppercase;
-                        font-size: 16px;
-                        font-weight: 700;
-                        color: var(--primary-text);
-                    }
+                }
+                .text {
+                    text-transform: uppercase;
+                    font-size: 16px;
+                    font-weight: 700;
+                    color: var(--primary-text);
                 }
             }
         }
@@ -40,12 +41,18 @@
             transform: translateX(-50%);
         }
 
-        @media only screen and (max-width: 768px) and (min-width: 1400) {
+        @media screen and (max-width: 1024px) {
+            min-height: 50px;
             .header-item {
-                .group-icon-wrapper {
-                    .group-icon-item {
-                        .text {
-                            display: none;
+                .logo-wrapper {
+                    max-width: 50px;
+                    max-height: 50px;
+                }
+                .group-icon-item {
+                    .icon-wrapper {
+                        svg {
+                            width: 36px;
+                            height: 36px;
                         }
                     }
                 }

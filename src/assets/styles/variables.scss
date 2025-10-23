@@ -10,16 +10,17 @@ $light-primary-text: #333333;
 $light-primary-btn: #B4853E;
 $light-primary-bg-btn: #ffffff;
 $light-primary-border-btn: rgba(0, 0, 0, 0.3);
-$light-primary-box-shadaw-btn: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+$light-primary-box-shadow-btn: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
 $light-primary-btn-hover: #ffffff;
 $light-primary-bg-btn-hover: linear-gradient(135deg, #ffc978, #b4853e);
 $light-second-btn: #333333;
 $light-second-bg-btn: #ffffff;
 $light-second-border-btn: none;
-$light-second-box-shadaw-btn: none;
+$light-second-box-shadow-btn: none;
 $light-second-btn-hover: #ffffff;
 $light-second-bg-btn-hover: #FFC978;
 $light-icon: #333333;
+$light-box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.5);
 
 // Ánh xạ thành CSS Custom Properties
 :root {
@@ -35,14 +36,15 @@ $light-icon: #333333;
     --primary-btn: #{$light-primary-btn};
     --primary-bg-btn: #{$light-primary-bg-btn};
     --primary-border-btn: #{$light-primary-border-btn};
-    --primary-box-shadaw-btn: #{$light-primary-box-shadaw-btn};
+    --primary-box-shadow-btn: #{$light-primary-box-shadow-btn};
     --primary-btn-hover: #{$light-primary-btn-hover};
     --primary-bg-btn-hover: #{$light-primary-bg-btn-hover};
     --second-btn: #{$light-second-btn};
     --second-bg-btn: #{$light-second-bg-btn};
     --second-border-btn: #{$light-second-border-btn};
-    --second-box-shadaw-btn: #{$light-second-box-shadaw-btn};
+    --second-box-shadow-btn: #{$light-second-box-shadow-btn};
     --second-btn-hover: #{$light-second-btn-hover};
     --second-bg-btn-hover: #{$light-second-bg-btn-hover};
     --icon: #{$light-icon};
+    --box-shadow: #{$light-box-shadow};
 }
