@@ -1,8 +1,8 @@
 <template>
-  <div class="group-icon-wrapper d-flex">
-    <div class="group-icon-item">
+  <div class="group-icon-wrapper d-flex align-items-center">
+    <div class="group-icon-item d-flex align-items-center">
         <Icon name="qr_scan" />
-        <span class="text">{{ t('header.scan_your_card') }}</span>
+        <span class="text d-none d-m-block" data-nosnippet>{{ t('header.scan_your_card') }}</span>
     </div>
   </div>
 </template>
