@@ -138,6 +138,20 @@ const updateVisibleItems = () => {
     newVisible.add(i)
   }
   visibleItemIndices.value = newVisible
+
+  if(!props.infinite) {
+    const maxVisibleIndex = totalDots.value - 1
+    if (startIndex === 0) {
+      visibleNext.value = true
+      visiblePrev.value = false
+    } else if (startIndex === maxVisibleIndex) {
+      visibleNext.value = false
+      visiblePrev.value = true
+    } else {
+      visibleNext.value = true
+      visiblePrev.value = true
+    }
+  }
 }
 
 // === wrapperStyle ===
@@ -197,13 +211,10 @@ const next = async () => {
     displayIndex.value = 0
     currentIndex.value = 0
   } else {
-    visibleNext.value = newIndex === maxVisibleIndex ? false : true
-    visiblePrev.value = true
     displayIndex.value = newIndex
     currentIndex.value = newIndex
   }
 
-  await nextTick()
   updateVisibleItems()
 }
 
@@ -217,13 +228,10 @@ const prev = async () => {
     displayIndex.value = maxVisibleIndex
     currentIndex.value = maxVisibleIndex
   } else {
-    visiblePrev.value = newIndex === 0 ? false : true
-    visibleNext.value = true
     displayIndex.value = newIndex
     currentIndex.value = newIndex
   }
 
-  await nextTick()
   updateVisibleItems()
 }
 
@@ -240,7 +248,6 @@ const goTo = async (index) => {
     currentIndex.value = index
   }
 
-  await nextTick()
   updateVisibleItems()
 }
 
@@ -310,10 +317,8 @@ const onDragEnd = async () => {
 const resetToStart = async () => {
   isResetting.value = true
   displayIndex.value = 0
-  await nextTick()
   wrapper.value.style.transition = 'none'
   wrapper.value.style.transform = 'translateX(0px)'
-  await nextTick()
   wrapper.value.style.transition = 'transform 0.4s ease, opacity 0.3s ease'
   isResetting.value = false
 }
@@ -323,10 +328,8 @@ const resetToEnd = async () => {
   const step = itemWidth.value + props.gap
   isResetting.value = true
   displayIndex.value = maxPage
-  await nextTick()
   wrapper.value.style.transition = 'none'
   wrapper.value.style.transform = `translateX(-${maxPage * step}px)`
-  await nextTick()
   wrapper.value.style.transition = 'transform 0.4s ease, opacity 0.3s ease'
   isResetting.value = false
 }
