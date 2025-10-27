@@ -1,6 +1,11 @@
-body {
+* {
     margin: 0;
-    font-family: 'Amiri', sans-serif;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Amiri", sans-serif;
     line-height: 1.2;
 }
 
@@ -8,39 +13,136 @@ body {
     max-width: var(--container-width);
     padding-left: 15px;
     padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
+// Display element
 $grid-breakpoints: (
-  xs: 0,
-  s: 576px,
-  m: 768px,
-  l: 992px,
-  xl: 1024px,
-  xxl: 1400px
+    xs: 0,
+    s: 576px,
+    m: 768px,
+    l: 992px,
+    xl: 1024px,
+    xxl: 1400px,
 );
-
 @mixin display-utilities {
-  $display-values: block, none, flex, grid;
-  @each $display in $display-values {
-    .d-#{$display} {
-      display: #{$display};
-    }
-
-    @each $breakpoint, $min-width in $grid-breakpoints {
-      @if $min-width != 0 {
-        @media (min-width: $min-width) {
-          .d-#{$breakpoint}-#{$display} {
-            display: #{$display} !important;
-          }
+    $display-values: block, none, flex, grid;
+    @each $display in $display-values {
+        .d-#{$display} {
+            display: #{$display};
         }
-      }
+        @each $breakpoint, $min-width in $grid-breakpoints {
+            @if $min-width != 0 {
+                @media (min-width: $min-width) {
+                    .d-#{$breakpoint}-#{$display} {
+                        display: #{$display} !important;
+                    }
+                }
+            }
+        }
     }
-  }
 }
 @include display-utilities;
 
+// Z-index
+@for $i from 0 through 100 {
+    .z-#{$i} {
+        z-index: $i;
+    }
+}
+
+// Basic element
 img {
     max-width: 100%;
+}
+
+.icon-wrapper {
+    width: fit-content;
+    height: fit-content;
+    svg {
+        width: 44px;
+        height: 44px;
+        color: var(--icon);
+    }
+    @media screen and (max-width: 1024px) {
+        svg {
+            width: 36px;
+            height: 36px;
+        }
+    }
+}
+
+// Slider
+.slider-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    .slider-wrapper {
+        cursor: grab;
+    }
+    .slider-wrapper:active {
+        cursor: grabbing;
+    }
+    .slider-item {
+        flex-shrink: 0;
+    }
+    .nav-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(0, 0, 0, 0.5);
+        color: white;
+        border: none;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        font-size: 1.5rem;
+        cursor: pointer;
+        z-index: 10;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &:hover:not(:disabled) {
+            background: rgba(0, 0, 0, 0.8);
+        }
+        &:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+        }
+        &.left {
+            left: 10px;
+        }
+        &.right {
+            right: 10px;
+        }
+    }
+
+    .dots {
+        display: flex;
+        justify-content: center;
+        gap: 24px;
+
+        span {
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: transparent;
+            border: 1px solid var(--icon);
+            cursor: pointer;
+            transition: all 0.3s;
+            &.active {
+                background: var(--icon);
+            }
+        }
+    }
+
+    &.stack-mode {
+        .dots {
+            z-index: 19;
+        }
+    }
 }
 
 .btn-diagonal {
