@@ -1,14 +1,15 @@
 <template>
-  <img
-    :src="computedSrc"
-    :srcset="computedSrcset"
-    :sizes="sizes"
-    :alt="alt"
-    :width="width"
-    :height="height"
-    :loading="loading"
-    :fetchpriority="fetchpriority"
-  />
+    <img
+        :class="addClass"
+        :src="computedSrc"
+        :srcset="computedSrcset"
+        :sizes="sizes"
+        :alt="alt"
+        :width="width"
+        :height="height"
+        :loading="loading"
+        :fetchpriority="fetchpriority"
+    />
 </template>
 
 <script>
@@ -19,6 +20,10 @@ export default {
       type: String,
       required: true,
       description: 'The name of the image (without .png extension)',
+    },
+    addClass: {
+      type: String,
+      description: 'Additional class',
     },
     width: {
       type: [Number, String],
@@ -37,7 +42,6 @@ export default {
     },
     sizes: {
       type: String,
-      default: '(max-width: 600px) 40vw, 200px',
       description: 'Sizes attribute value for responsive images',
     },
     alt: {

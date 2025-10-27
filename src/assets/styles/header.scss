@@ -4,7 +4,7 @@
     .header-wrapper {
         gap: 40px;
         position: relative;
-        min-height: 100px;
+        min-height: 124px;
         padding: 12px 0;
         .header-item {
             .group-icon-wrapper {
@@ -31,7 +31,7 @@
                 }
             }
         }
-        
+
         .header-item:not(:nth-child(2)) {
             flex: 0 0 calc((100% - 80px) / 3);
         }
@@ -42,7 +42,7 @@
         }
 
         @media screen and (max-width: 1024px) {
-            min-height: 50px;
+            min-height: 74px;
             .header-item {
                 .logo-wrapper {
                     max-width: 50px;
