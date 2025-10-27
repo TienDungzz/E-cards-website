@@ -31,6 +31,7 @@
             }
             .banner--bg {
                 position: sticky;
+                aspect-ratio: 16/9;
                 opacity: 1;
                 transition: all var(--time-l) ease-in-out;
             }
