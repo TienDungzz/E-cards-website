@@ -20,10 +20,22 @@
         </div>
 
         <!-- Arrows -->
-        <button role="button" v-if="arrows && totalDots > 1" class="nav-btn prev" @click="prev" :disabled="isDragging">
+        <button
+            role="button"
+            v-if="arrows && totalDots > 1"
+            class="arrow prev"
+            @click="prev"
+            :disabled="isDragging || !visiblePrev"
+        >
             <Icon name="arrow" />
         </button>
-        <button role="button" v-if="arrows && totalDots > 1" class="nav-btn next" @click="next" :disabled="isDragging">
+        <button
+            role="button"
+            v-if="arrows && totalDots > 1"
+            class="arrow next"
+            @click="next"
+            :disabled="isDragging || !visibleNext"
+        >
             <Icon name="arrow" />
         </button>
 
@@ -102,6 +114,8 @@ const visibleItemIndices = ref(new Set())
 const randomCache = new Map()
 const isReady = ref(false)
 const autoplayTimer = ref(null)
+const visibleNext = ref(true)
+const visiblePrev = ref(true)
 
 // === displayItems: không clone ===
 const displayItems = computed(() => props.items)
@@ -183,6 +197,8 @@ const next = async () => {
     displayIndex.value = 0
     currentIndex.value = 0
   } else {
+    visibleNext.value = newIndex === maxVisibleIndex ? false : true
+    visiblePrev.value = true
     displayIndex.value = newIndex
     currentIndex.value = newIndex
   }
@@ -201,6 +217,8 @@ const prev = async () => {
     displayIndex.value = maxVisibleIndex
     currentIndex.value = maxVisibleIndex
   } else {
+    visiblePrev.value = newIndex === 0 ? false : true
+    visibleNext.value = true
     displayIndex.value = newIndex
     currentIndex.value = newIndex
   }
@@ -211,7 +229,6 @@ const prev = async () => {
 
 const goTo = async (index) => {
   const maxVisibleIndex = totalDots.value - 1
-
   if (props.infinite && index > maxVisibleIndex) {
     displayIndex.value = 0
     currentIndex.value = 0
@@ -343,6 +360,7 @@ onMounted(() => {
   startAutoplay()
 
   window.addEventListener('resize', updateDimensions)
+  if (!props.infinite) visiblePrev.value = false
   if (props.draggable) {
     window.addEventListener('mousemove', onMouseMove)
     window.addEventListener('mouseup', onMouseUp)
