@@ -1,5 +1,5 @@
 .header-wrapper {
-    height: auto;
+    height: 60px;
     transition: none;
 }
 
@@ -10,8 +10,7 @@
     z-index: 1000;
     background: var(--background, #fff);
     box-shadow: var(--box-shadow);
-    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    transform: translateY(0);
+    transition: none;
 
     .header-inner {
         gap: 40px;
@@ -75,6 +74,9 @@
     &.is-sticky {
         position: fixed;
         top: 0;
+        &.is-scrolled-far {
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
         &:not(.is-visible) {
             transform: translateY(-100%);
         }
