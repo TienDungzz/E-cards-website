@@ -1,7 +1,19 @@
+.header-wrapper {
+    height: auto;
+    transition: none;
+}
+
 .header {
+    position: static;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: var(--background, #fff);
     box-shadow: var(--box-shadow);
-    background-color: var(--background);
-    .header-wrapper {
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateY(0);
+
+    .header-inner {
         gap: 40px;
         position: relative;
         min-height: 100px;
@@ -31,7 +43,7 @@
                 }
             }
         }
-        
+
         .header-item:not(:nth-child(2)) {
             flex: 0 0 calc((100% - 80px) / 3);
         }
@@ -57,6 +69,14 @@
                     }
                 }
             }
+        }
+    }
+
+    &.is-sticky {
+        position: fixed;
+        top: 0;
+        &:not(.is-visible) {
+            transform: translateY(-100%);
         }
     }
 }
