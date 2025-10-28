@@ -16,7 +16,7 @@
     .header-inner {
         gap: 40px;
         position: relative;
-        min-height: 100px;
+        min-height: 124px;
         padding: 12px 0;
         .header-item {
             .group-icon-wrapper {
@@ -54,7 +54,7 @@
         }
 
         @media screen and (max-width: 1024px) {
-            min-height: 50px;
+            min-height: 74px;
             .header-item {
                 .logo-wrapper {
                     max-width: 50px;

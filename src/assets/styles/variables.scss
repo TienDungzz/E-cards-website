@@ -7,7 +7,7 @@ $light-overlay: linear-gradient(to right, rgba(3, 3, 3, 0.7) 0%, rgba(3, 3, 3, 0
 $light-placeholder-input: #919191;
 $light-primary-heading: #333333;
 $light-primary-text: #333333;
-$light-primary-btn: #B4853E;
+$light-primary-btn: #b4853e;
 $light-primary-bg-btn: #ffffff;
 $light-primary-border-btn: rgba(0, 0, 0, 0.3);
 $light-primary-box-shadow-btn: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
@@ -18,14 +18,14 @@ $light-second-bg-btn: #ffffff;
 $light-second-border-btn: none;
 $light-second-box-shadow-btn: none;
 $light-second-btn-hover: #ffffff;
-$light-second-bg-btn-hover: #FFC978;
+$light-second-bg-btn-hover: #ffc978;
 $light-icon: #333333;
+$light-icon-rgb: 51, 51, 51;
 $light-box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.5);
 
 // Ánh xạ thành CSS Custom Properties
 :root {
     --container-width: #{$container-width};
-
 
     --background: #{$light-background};
     --border-input: #{$light-border-input};
@@ -46,5 +46,13 @@ $light-box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.5);
     --second-btn-hover: #{$light-second-btn-hover};
     --second-bg-btn-hover: #{$light-second-bg-btn-hover};
     --icon: #{$light-icon};
+    --icon-rgb: #{$light-icon-rgb};
     --box-shadow: #{$light-box-shadow};
+
+    --time-xs: 300ms;
+    --time-s: 500ms;
+    --time-m: 800ms;
+    --time-l: 1000ms;
+    --time-xl: 1500ms;
+    --time-xxl: 2000ms;
 }
