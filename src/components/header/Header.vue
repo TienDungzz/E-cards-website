@@ -1,6 +1,10 @@
 <template>
     <div ref="headerWrapper" class="header-wrapper">
-        <header class="header" :class="{ 'is-sticky': isSticky, 'is-visible': isVisible }">
+        <header
+            ref="headerEl"
+            class="header"
+            :class="{ 'is-sticky': isSticky, 'is-visible': isVisible, 'is-scrolled-far': isScrolledFar }"
+        >
             <div class="container">
                 <div class="header-inner d-flex justify-content-between">
                     <div class="header-item d-flex justify-content-start">
@@ -33,37 +37,45 @@ const isVisible = ref(true);
 let lastScrollY = 0;
 let ticking = false;
 let headerHeight = 0;
+const isScrolledFar = ref(false);
 
-// Cập nhật chiều cao (wrapper = inner)
 const syncHeight = async () => {
   await nextTick();
-  if (headerEl.value) {
+  if (headerEl.value && headerWrapper.value) {
     headerHeight = headerEl.value.offsetHeight;
-    if (headerWrapper.value) {
-      headerWrapper.value.style.height = `${headerHeight}px`;
-    }
+    headerWrapper.value.style.height = `${headerHeight}px`;
   }
 };
 
 const updateScroll = () => {
   const currentScrollY = window.scrollY;
+  const farThreshold = headerHeight * 1.2;
 
-  // Bật sticky khi cuộn qua header
-  if (currentScrollY > headerHeight) {
-    if (!isSticky.value) isSticky.value = true;
-  } else {
+  if (currentScrollY >= headerHeight) {
+    if (!isSticky.value) {
+      isSticky.value = true;
+      headerWrapper.value.style.height = `${headerHeight}px`;
+    }
+  } else if (currentScrollY === 0) {
     isSticky.value = false;
-    isVisible.value = true;          // luôn hiện khi chưa qua header
+    isVisible.value = true;
   }
 
-  // Ẩn/hiện khi đang sticky
+  if (currentScrollY >= farThreshold) {
+    isScrolledFar.value = true;
+  } else {
+    isScrolledFar.value = false;
+  }
+
   if (isSticky.value) {
-    const hideThreshold = headerHeight + 30; // tránh nhấp nháy
+    const hideThreshold = headerHeight + 30;
     if (currentScrollY > lastScrollY && currentScrollY > hideThreshold) {
       isVisible.value = false;
     } else if (currentScrollY < lastScrollY) {
       isVisible.value = true;
     }
+  } else {
+    isVisible.value = false;
   }
 
   lastScrollY = currentScrollY;
