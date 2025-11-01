@@ -1,12 +1,28 @@
 {
-  "header": {
-    "light": "Light",
-    "dard": "Dark",
-    "store": "Store",
-    "login": "Login",
-    "menu": "Menu",
-    "en": "en",
-    "vi": "vi",
-    "scan_your_card": "Scan your card"
-  }
+    "header": {
+        "light": "Light",
+        "dard": "Dark",
+        "store": "Store",
+        "login": "Login",
+        "menu": "Menu",
+        "en": "en",
+        "vi": "vi",
+        "scan_your_card": "Scan your card"
+    },
+    "homepage": {
+        "spotlight_heading": "Choose your style",
+        "image_banner_heading": "Create Your Own E-Cards<br>Easy & Impressive",
+        "image_banner_desc": "In just a few steps, you can design a personalized online card. Add photos, wishes, music and send it to your family or friends – fast and unique!",
+        "image_banner_btn": "Design now"
+    },
+    "footer": {
+        "text": "Follow for more inspiration & new card designs",
+        "company": "Company",
+        "product": "Product",
+        "blogs": "Blogs",
+        "about": "About",
+        "contact": "Contact",
+        "privacy_policy": "Privacy & Policy",
+        "terms": "Terms"
+    }
 }

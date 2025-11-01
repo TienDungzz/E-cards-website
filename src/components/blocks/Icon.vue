@@ -1,28 +1,38 @@
 <template>
-    <div class="icon-wrapper" v-if="svgContent" v-html="svgContent" />
+    <svg aria-hidden="true" :class="iconClass" :style="iconStyle">
+        <use :xlink:href="symbolId" :fill="color" />
+    </svg>
 </template>
 
 <script setup>
-    import { ref, onMounted } from 'vue';
+import { computed } from 'vue';
 
-    const props = defineProps({
-    name: {
-        type: String,
-        required: true,
-        description: 'The name of the SVG icon (without .svg extension)',
-    },
-    });
+const props = defineProps({
+  name: {
+    type: String,
+    required: true,
+  },
+  prefix: {
+    type: String,
+    default: 'icon',
+  },
+  color: {
+    type: String,
+    default: 'currentColor',
+  },
+  size: {
+    type: Number,
+    default: 44,
+  },
+  iconClass: {
+    type: String,
+    default: 'icon',
+  },
+});
 
-    const svgContent = ref('');
-    const errorMessage = ref('');
-
-    onMounted(async () => {
-        try {
-            const response = await import(`@/assets/icons/${props.name}.svg?raw`);
-            svgContent.value = response.default;
-        } catch (error) {
-            errorMessage.value = error.message || 'Unknown error';
-            svgContent.value = '';
-        }
-    });
+const symbolId = computed(() => `#${props.prefix}-${props.name}`);
+const iconStyle = computed(() => ({
+  width: `${props.size}px`,
+  height: `${props.size}px`,
+}));
 </script>
