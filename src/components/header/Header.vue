@@ -1,5 +1,5 @@
 <template>
-    <header ref="headerWrapper" class="header-wrapper">
+    <header ref="headerWrapper" class="header-wrapper position-sticky z-21">
         <div
             ref="headerEl"
             class="header"

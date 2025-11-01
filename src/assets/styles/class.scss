@@ -134,6 +134,7 @@ $direction: (
 $position: (
     relative: relative,
     absolute: absolute,
+    sticky: sticky,
 );
 
 @each $key, $value in $position {
