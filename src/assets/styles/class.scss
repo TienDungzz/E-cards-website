@@ -141,3 +141,77 @@ $position: (
         position: $value;
     }
 }
+
+@each $breakpoint, $min-width in $grid-breakpoints {
+    @if $min-width != 0 {
+        @media (min-width: $min-width) {
+            @for $i from 0 through 100 {
+                .p-#{$breakpoint}-#{$i} {
+                    padding: #{$i}px;
+                }
+                .m-#{$breakpoint}-#{$i} {
+                    margin: #{$i}px;
+                }
+                .gap-#{$breakpoint}-#{$i} {
+                    gap: #{$i}px;
+                }
+                .r-gap-#{$breakpoint}-#{$i} {
+                    row-gap: #{$i}px;
+                }
+                .c-gap-#{$breakpoint}-#{$i} {
+                    column-gap: #{$i}px;
+                }
+                .pt-#{$breakpoint}-#{$i} {
+                    padding-top: #{$i}px;
+                }
+                .pr-#{$breakpoint}-#{$i} {
+                    padding-right: #{$i}px;
+                }
+                .pb-#{$breakpoint}-#{$i} {
+                    padding-bottom: #{$i}px;
+                }
+                .pl-#{$breakpoint}-#{$i} {
+                    padding-left: #{$i}px;
+                }
+
+                .mt-#{$breakpoint}-#{$i} {
+                    margin-top: #{$i}px;
+                }
+                .mr-#{$breakpoint}-#{$i} {
+                    margin-right: #{$i}px;
+                }
+                .mb-#{$breakpoint}-#{$i} {
+                    margin-bottom: #{$i}px;
+                }
+                .ml-#{$breakpoint}-#{$i} {
+                    margin-left: #{$i}px;
+                }
+
+                .w-#{$breakpoint}-#{$i} {
+                    width: #{$i + "%"};
+                }
+                .h-#{$breakpoint}-#{$i} {
+                    height: #{$i + "%"};
+                }
+            }
+
+            @each $key, $value in $direction {
+                .flex-#{$breakpoint}-#{$key} {
+                    flex-direction: $value;
+                }
+            }
+
+            @each $key, $value in $align-items {
+                .align-items-#{$breakpoint}-#{$key} {
+                    align-items: $value;
+                }
+            }
+
+            @each $key, $value in $justify-content {
+                .justify-content-#{$breakpoint}-#{$key} {
+                    justify-content: $value;
+                }
+            }
+        }
+    }
+}
