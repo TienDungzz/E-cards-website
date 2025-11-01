@@ -1,0 +1,143 @@
+// Display element
+$grid-breakpoints: (
+    xs: 0,
+    s: 576px,
+    m: 768px,
+    l: 992px,
+    xl: 1024px,
+    xxl: 1400px,
+);
+@mixin display-utilities {
+    $display-values: block, none, flex, grid;
+    @each $display in $display-values {
+        .d-#{$display} {
+            display: #{$display};
+        }
+        @each $breakpoint, $min-width in $grid-breakpoints {
+            @if $min-width != 0 {
+                @media (min-width: $min-width) {
+                    .d-#{$breakpoint}-#{$display} {
+                        display: #{$display} !important;
+                    }
+                }
+            }
+        }
+    }
+}
+@include display-utilities;
+
+@for $i from 0 through 100 {
+    .z-#{$i} {
+        z-index: $i;
+    }
+    .p-#{$i} {
+        padding: #{$i}px;
+    }
+    .m-#{$i} {
+        margin: #{$i}px;
+    }
+    .gap-#{$i} {
+        gap: #{$i}px;
+    }
+    .r-gap-#{$i} {
+        row-gap: #{$i}px;
+    }
+    .c-gap-#{$i} {
+        column-gap: #{$i}px;
+    }
+    .pt-#{$i} {
+        padding-top: #{$i}px;
+    }
+    .pr-#{$i} {
+        padding-right: #{$i}px;
+    }
+    .pb-#{$i} {
+        padding-bottom: #{$i}px;
+    }
+    .pl-#{$i} {
+        padding-left: #{$i}px;
+    }
+
+    .mt-#{$i} {
+        margin-top: #{$i}px;
+    }
+    .mr-#{$i} {
+        margin-right: #{$i}px;
+    }
+    .mb-#{$i} {
+        margin-bottom: #{$i}px;
+    }
+    .ml-#{$i} {
+        margin-left: #{$i}px;
+    }
+
+    .w-#{$i} {
+        width: #{$i + "%"};
+    }
+    .h-#{$i} {
+        height: #{$i + "%"};
+    }
+}
+
+$text-aligns: (
+    left: left,
+    center: center,
+    right: right,
+    justify: justify,
+);
+@each $key, $value in $text-aligns {
+    .text-#{$key} {
+        text-align: $value;
+    }
+}
+
+$align-items: (
+    start: start,
+    center: center,
+    end: end,
+);
+
+@each $key, $value in $align-items {
+    .align-items-#{$key} {
+        align-items: $value;
+    }
+}
+
+$justify-content: (
+    start: start,
+    center: center,
+    end: end,
+    around: space-around,
+    between: space-between,
+    evenly: space-evenly,
+);
+
+@each $key, $value in $justify-content {
+    .justify-content-#{$key} {
+        justify-content: $value;
+    }
+}
+
+$direction: (
+    row: row,
+    row-reverse: row-reverse,
+    column: column,
+    column-reverse: column-reverse,
+);
+
+@each $key, $value in $direction {
+    .flex-#{$key} {
+        flex-direction: $value;
+    }
+}
+
+$position: (
+    relative: relative,
+    absolute: absolute,
+);
+
+@each $key, $value in $position {
+    .position-#{$key} {
+        position: $value;
+    }
+}

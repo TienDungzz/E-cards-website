@@ -1,6 +1,6 @@
 <template>
-    <div ref="headerWrapper" class="header-wrapper">
-        <header
+    <header ref="headerWrapper" class="header-wrapper">
+        <div
             ref="headerEl"
             class="header"
             :class="{ 'is-sticky': isSticky, 'is-visible': isVisible, 'is-scrolled-far': isScrolledFar }"
@@ -18,8 +18,8 @@
                     </div>
                 </div>
             </div>
-        </header>
-    </div>
+        </div>
+    </header>
 </template>
 
 <script setup>

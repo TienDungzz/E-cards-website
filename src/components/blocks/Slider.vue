@@ -27,7 +27,7 @@
             @click="prev"
             :disabled="isDragging || !visiblePrev"
         >
-            <Icon name="arrow" />
+            <Icon name="chevron" />
         </button>
         <button
             role="button"
@@ -36,7 +36,7 @@
             @click="next"
             :disabled="isDragging || !visibleNext"
         >
-            <Icon name="arrow" />
+            <Icon name="chevron" />
         </button>
 
         <!-- Dots -->

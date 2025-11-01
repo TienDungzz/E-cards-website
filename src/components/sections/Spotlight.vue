@@ -2,7 +2,7 @@
     <section class="section spotlight">
         <div class="container">
             <div class="heading-section has-arrow">
-                <h2>Choose your style</h2>
+                <h2>{{ t('homepage.spotlight_heading') }}</h2>
             </div>
             <Slider
                 :items="slides"
@@ -24,11 +24,12 @@
 </template>
 
 <script setup>
+import { useI18n } from 'vue-i18n';
 import { ref } from 'vue'
 import Slider from '@/components/blocks/Slider.vue'
 import ImageResponsive from '@/components/blocks/ImageResponsive.vue';
-import '@/assets/styles/sections/_hero-banner.scss'
 
+const { t } = useI18n();
 const slides = ref([
   { id: 1, title: 'Letter image', image: 'letter' },
   { id: 2, title: 'Pink cake', image: 'pink-cake' },

@@ -1,0 +1,46 @@
+.footer-wrapper {
+    background: var(--background-other);
+    .footer {
+        .footer-text {
+            font-size: 16px;
+            color: var(--primary-text);
+        }
+        .footer-heading {
+            font-size: 30px;
+            font-weight: 700;
+            letter-spacing: 0.1rem;
+            color: var(--primary-heading);
+            text-transform: uppercase;
+        }
+        .footer-link {
+            text-decoration: none;
+            font-size: 16px;
+            color: var(--primary-text);
+            .text-underline {
+                position: relative;
+                display: inline-block;
+                cursor: pointer;
+                &:hover {
+                    &:after {
+                        transform: scaleX(1);
+                    }
+                }
+                &:after {
+                    content: "";
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 2px;
+                    background-color: currentColor;
+                    transform: scaleX(0);
+                    transform-origin: left;
+                    transition: transform var(--time-xs) ease;
+                }
+            }
+        }
+        .footer-bottom {
+            border-top: 1px solid var(--border-input);
+        }
+    }
+}
