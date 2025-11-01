@@ -5,7 +5,7 @@
                 <h2>{{ t('homepage.spotlight_heading') }}</h2>
             </div>
             <Slider
-                :items="slides"
+                :items="items"
                 :columns="{ mobile: 2, tablet: 3, desktop: 4}"
                 :gap="15"
                 :infinite="false"
@@ -30,11 +30,8 @@ import Slider from '@/components/blocks/Slider.vue'
 import ImageResponsive from '@/components/blocks/ImageResponsive.vue';
 
 const { t } = useI18n();
-const slides = ref([
-  { id: 1, title: 'Letter image', image: 'letter' },
-  { id: 2, title: 'Pink cake', image: 'pink-cake' },
-  { id: 3, title: 'Rose', image: 'rose' },
-  { id: 4, title: 'Red heart', image: 'red-heart' },
-  { id: 5, title: 'White christmas', image: 'white-christmas' },
-])
+
+const props = defineProps({
+  items: { type: Array, required: true }
+})
 </script>
