@@ -312,6 +312,8 @@ const onDragEnd = async () => {
   displayIndex.value = targetPage
   currentTranslate.value = 0
   prevTranslate.value = 0
+
+  updateVisibleItems()
 }
 
 const resetToStart = async () => {
@@ -375,7 +377,6 @@ onMounted(() => {
 watch([isMobile, isTablet, isDesktop], () => {
   nextTick(() => {
     updateDimensions()
-    updateVisibleItems()
     const max = totalDots.value - 1
     currentIndex.value = Math.min(currentIndex.value, max)
   })
