@@ -1,12 +1,12 @@
 <template>
     <section class="section image-banner">
         <div class="container">
-            <div class="content-section d-flex">
-                <div class="banner w-50">
+            <div class="content-section d-flex flex-column flex-l-row">
+                <div class="banner w-100 w-l-50">
                     <ImageResponsive :imageName="image" :width="1000" :widths="[320, 450, 550, 768, 992]" :alt="alt" />
                 </div>
                 <div
-                    class="content w-50 d-flex align-items-center justify-content-center flex-column gap-40 p-40 text-center"
+                    class="content w-100 w-l-50 d-flex align-items-center justify-content-center flex-column pt-20 pt-l-0 gap-20 gap-l-40 p-0 p-l-40 text-center"
                 >
                     <div class="heading-section pb-0">
                         <h2 v-html="heading"></h2>

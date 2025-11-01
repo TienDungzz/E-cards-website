@@ -2,8 +2,10 @@
     <footer class="footer-wrapper pt-40 pb-40">
         <div class="footer">
             <div class="container">
-                <div class="footer-top d-flex gap-15 pb-40">
-                    <div class="footer-col d-flex flex-column w-40 gap-30">
+                <div class="footer-top d-flex gap-0 gap-m-15 pb-20 pb-m-40">
+                    <div
+                        class="footer-col large d-flex flex-column align-items-center align-items-xl-start w-100 w-xl-40 gap-10 gap-m-30"
+                    >
                         <div class="logo-wrapper">
                             <ImageResponsive
                                 :imageName="'logo'"
@@ -19,40 +21,46 @@
                             <Icon name="instagram" />
                         </div>
                     </div>
-                    <div class="footer-col d-flex flex-column w-20 gap-20">
-                        <h3 class="footer-heading">{{ t('footer.company') }}</h3>
-                        <a href="#" role="link" class="footer-link"
-                            ><span class="text-underline">{{ t('footer.about') }}</span></a
-                        >
-                        <a href="#" role="link" class="footer-link"
-                            ><span class="text-underline">{{ t('footer.contact') }}</span></a
-                        >
+                    <div class="footer-col w-100 gap-20" @click="toggle($event)">
+                        <h3 class="footer-heading pt-12 pb-12">{{ t('footer.company') }}</h3>
+                        <div class="footer-links">
+                            <a href="#" role="link" class="footer-link"
+                                ><span class="text-underline">{{ t('footer.about') }}</span></a
+                            >
+                            <a href="#" role="link" class="footer-link"
+                                ><span class="text-underline">{{ t('footer.contact') }}</span></a
+                            >
+                        </div>
                     </div>
-                    <div class="footer-col d-flex flex-column w-20 gap-20">
-                        <h3 class="footer-heading">{{ t('footer.product') }}</h3>
-                        <a href="#" role="link" class="footer-link"
-                            ><span class="text-underline">{{ t('footer.about') }}</span></a
-                        >
-                        <a href="#" role="link" class="footer-link"
-                            ><span class="text-underline">{{ t('footer.contact') }}</span></a
-                        >
+                    <div class="footer-col w-100 gap-20" @click="toggle($event)">
+                        <h3 class="footer-heading pt-12 pb-12">{{ t('footer.product') }}</h3>
+                        <div class="footer-links">
+                            <a href="#" role="link" class="footer-link"
+                                ><span class="text-underline">{{ t('footer.about') }}</span></a
+                            >
+                            <a href="#" role="link" class="footer-link"
+                                ><span class="text-underline">{{ t('footer.contact') }}</span></a
+                            >
+                        </div>
                     </div>
-                    <div class="footer-col d-flex flex-column w-20 gap-20">
-                        <h3 class="footer-heading">{{ t('footer.blogs') }}</h3>
-                        <a href="#" role="link" class="footer-link"
-                            ><span class="text-underline">{{ t('footer.about') }}</span></a
-                        >
-                        <a href="#" role="link" class="footer-link"
-                            ><span class="text-underline">{{ t('footer.contact') }}</span></a
-                        >
+                    <div class="footer-col w-100 gap-20" @click="toggle($event)">
+                        <h3 class="footer-heading pt-12 pb-12">{{ t('footer.blogs') }}</h3>
+                        <div class="footer-links">
+                            <a href="#" role="link" class="footer-link"
+                                ><span class="text-underline">{{ t('footer.about') }}</span></a
+                            >
+                            <a href="#" role="link" class="footer-link"
+                                ><span class="text-underline">{{ t('footer.contact') }}</span></a
+                            >
+                        </div>
                     </div>
                 </div>
                 <div class="footer-bottom d-flex justify-content-between pt-20">
                     <p class="footer-copyright">@Copyright</p>
                     <p class="footer-other-link d-flex gap-20">
-                        <a href="#" role="link" class="footer-link"
+                        <a href="#" role="link" class="footer-link-2"
                             ><span class="text-underline">{{ t('footer.privacy_policy') }}</span></a
-                        ><a href="#" role="link" class="footer-link"
+                        ><a href="#" role="link" class="footer-link-2"
                             ><span class="text-underline">{{ t('footer.terms') }}</span></a
                         >
                     </p>
@@ -63,10 +71,14 @@
 </template>
 
 <script setup>
-import { useI18n } from 'vue-i18n';
-import '@/assets/styles/footer.scss';
-import ImageResponsive from '@/components/blocks/ImageResponsive.vue';
-import Icon from '@/components/blocks/Icon.vue';
+import { useI18n } from 'vue-i18n'
+import '@/assets/styles/footer.scss'
+import ImageResponsive from '@/components/blocks/ImageResponsive.vue'
+import Icon from '@/components/blocks/Icon.vue'
 
 const { t } = useI18n();
+
+const toggle = (event) => {
+  event.target.classList.toggle('active');
+};
 </script>
