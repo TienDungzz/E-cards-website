@@ -1,8 +1,7 @@
 <template>
-    <button class="button d-flex align-items-center justify-content-center gap-10" :class="style">
+    <button class="button d-flex align-items-center" :class="style">
         <Icon v-if="icon && iconPos == 'left'" :name="icon" />
-        {{ label }}
-        {{ icon }}
+        <span class="text">{{ label }}</span>
         <Icon v-if="icon && iconPos == 'right'" :name="icon" />
     </button>
 </template>
@@ -30,5 +29,5 @@ const props = defineProps({
         required: false,
         default: "right"
     }
-    });
+});
 </script>

@@ -1,26 +1,35 @@
 {
-  "name": "e-cards-website",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
-  },
-  "dependencies": {
-    "@vueuse/core": "^14.0.0",
-    "axios": "^1.12.2",
-    "pinia": "^3.0.3",
-    "vue": "^3.5.22",
-    "vue-i18n": "^9.14.5",
-    "vue-router": "^4.6.3"
-  },
-  "devDependencies": {
-    "@vitejs/plugin-vue": "^6.0.1",
-    "fast-glob": "^3.3.3",
-    "sass-embedded": "^1.93.2",
-    "vite": "^7.1.7",
-    "vite-plugin-svg-icons": "^2.0.1"
-  }
+    "name": "e-cards-website",
+    "private": true,
+    "version": "0.0.0",
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build",
+        "preview": "vite preview",
+        "deploy": "gh-pages -d dist"
+    },
+    "dependencies": {
+        "@editorjs/checklist": "^1.6.0",
+        "@editorjs/editorjs": "^2.31.0",
+        "@editorjs/header": "^2.8.8",
+        "@editorjs/link": "^2.6.2",
+        "@editorjs/list": "^2.0.8",
+        "@editorjs/quote": "^2.7.6",
+        "@vueuse/core": "^14.0.0",
+        "axios": "^1.12.2",
+        "pinia": "^3.0.3",
+        "uuid": "^13.0.0",
+        "vue": "^3.5.22",
+        "vue-i18n": "^9.14.5",
+        "vue-router": "^4.6.3"
+    },
+    "devDependencies": {
+        "@vitejs/plugin-vue": "^6.0.1",
+        "fast-glob": "^3.3.3",
+        "gh-pages": "^6.3.0",
+        "sass-embedded": "^1.93.2",
+        "vite": "^7.1.7",
+        "vite-plugin-svg-icons": "^2.0.1"
+    }
 }
