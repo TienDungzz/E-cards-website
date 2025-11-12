@@ -13,7 +13,9 @@
                     </div>
                     <div v-if="description || button" class="divider"></div>
                     <p v-show="description" class="description">{{description}}</p>
-                    <Button :label="button" :icon="'arrow'" :size="32" />
+                    <router-link to="/edit-card/">
+                        <Button :label="button" :icon="'arrow'" :size="32" />
+                    </router-link>
                 </div>
             </div>
         </div>

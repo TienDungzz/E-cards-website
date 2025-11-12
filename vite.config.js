@@ -4,6 +4,7 @@ import { createSvgIconsPlugin } from "vite-plugin-svg-icons";
 import path from "path";
 
 export default defineConfig({
+    base: "/E-cards-website/",
     plugins: [
         vue(),
         createSvgIconsPlugin({

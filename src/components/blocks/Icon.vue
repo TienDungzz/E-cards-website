@@ -1,11 +1,11 @@
 <template>
-    <svg aria-hidden="true" :class="iconClass">
+    <svg aria-hidden="true" :class="iconClass" :style="iconStyle">
         <use :xlink:href="symbolId" :fill="color" />
     </svg>
 </template>
 
 <script setup>
-import { computed } from 'vue';
+import { computed } from 'vue'
 
 const props = defineProps({
   name: {
@@ -24,7 +24,9 @@ const props = defineProps({
     type: String,
     default: 'icon',
   },
-});
+  style: Object
+})
 
-const symbolId = computed(() => `#${props.prefix}-${props.name}`);
+const symbolId = computed(() => `#${props.prefix}-${props.name}`)
+const iconStyle = computed(() => props.style || {})
 </script>

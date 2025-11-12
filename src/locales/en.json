@@ -24,5 +24,134 @@
         "contact": "Contact",
         "privacy_policy": "Privacy & Policy",
         "terms": "Terms"
+    },
+    "edit_page": {
+        "page_title": "Customize your card your way",
+        "page_desc": "Upload your own photos, videos, audio, and messages — create a personalized, emotional card.",
+        "page_info": {
+            "title": "Tell Us About Your Card",
+            "your_name": {
+                "label": "Your Name",
+                "placeholder": "Enter your name"
+            },
+            "your_email": {
+                "label": "Your Email",
+                "placeholder": "Enter your email"
+            },
+            "recipient_name": {
+                "label": "Recipient's Name",
+                "placeholder": "Enter recipient's name",
+                "info": "Who should we call them in the digital chapter?"
+            },
+            "recipient_email": {
+                "label": "Recipient's Email",
+                "placeholder": "Enter recipient's email",
+                "info": "Required to send them the notification"
+            },
+            "schedule_delivery": {
+                "label": "Schedule Email Delivery",
+                "placeholder": "mm/dd/yyyy",
+                "info": "Leave empty to send immediately"
+            },
+            "cover_message": {
+                "label": "Short Message For The Cover",
+                "placeholder": "A secret digital chapter made just for you",
+                "info": "This will appear on the cover of their digital chapter."
+            },
+            "recipient_timezone": {
+                "label": "Timezone",
+                "placeholder": "Auto timezone",
+                "info": "Recipient's timezone"
+            }
+        },
+        "page_image": {
+            "title": "Add photo memory",
+            "upload_photo": {
+                "label": "Upload Photo"
+            },
+            "caption": {
+                "label": "Caption",
+                "placeholder": "Add a beautiful caption for this memory...",
+                "info": "Share the story behind this photo"
+            }
+        },
+        "page_video": {
+            "title": "Add Video memory",
+            "upload_video": {
+                "label": "Upload Video"
+            },
+            "caption": {
+                "label": "Caption",
+                "placeholder": "Add a beautiful caption for this memory...",
+                "info": "Share the story behind this video"
+            }
+        },
+        "page_audio": {
+            "title": "Add Voice Message",
+            "upload_audio": {
+                "label": "Record Audio"
+            },
+            "caption": {
+                "label": "Message Description",
+                "placeholder": "What's this message about?"
+            }
+        },
+        "page_wishes": {
+            "title": "Write your message",
+            "message": {
+                "label": "Message editor",
+                "placeholder": "Enter your wishes here... ✨"
+            },
+            "background": {
+                "label": "Background",
+                "placeholder": "Click to upload or drag & drop"
+            }
+        },
+        "page_style": {
+            "title": "Choose style card",
+            "type": {
+                "label": "Choose card type"
+            },
+            "style": {
+                "label": "Choose card style"
+            },
+            "background": {
+                "label": "Background color"
+            },
+            "heading_color": {
+                "label": "Heading color"
+            },
+            "text_color": {
+                "label": "Text color"
+            }
+        },
+        "sidebar": {
+            "about_your_card": "About your card",
+            "photo": "Photo",
+            "video": "Video",
+            "audio": "Audio",
+            "send_wishes": "Send wishes",
+            "choose_style": "Choose style"
+        },
+        "step": {
+            "next": "Next step",
+            "back": "Back",
+            "finish": "Finish"
+        },
+        "input": {
+            "image": {
+                "placeholder": "Click to upload or drag & drop",
+                "second_placeholder": "JPG, PNG up to 5MB"
+            },
+            "video": {
+                "placeholder": "Click to upload or drag & drop",
+                "second_placeholder": "Mp4 up to 5MB"
+            },
+            "audio": {
+                "start": "Click to start recording",
+                "recording": "Recording...",
+                "upload": "Upload an audio file"
+            }
+        }
     }
 }

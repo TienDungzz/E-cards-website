@@ -77,6 +77,19 @@ $grid-breakpoints: (
     .h-#{$i} {
         height: #{$i + "%"};
     }
+
+    .t-#{$i} {
+        top: #{$i + "%"};
+    }
+    .r-#{$i} {
+        right: #{$i + "%"};
+    }
+    .b-#{$i} {
+        bottom: #{$i + "%"};
+    }
+    .l-#{$i} {
+        left: #{$i + "%"};
+    }
 }
 
 $text-aligns: (
@@ -143,6 +156,12 @@ $position: (
     }
 }
 
+@for $i from 0 through 5 {
+    .grid-#{$i} {
+        grid-template-columns: repeat(#{$i}, minmax(0, 1fr));
+    }
+}
+
 @each $breakpoint, $min-width in $grid-breakpoints {
     @if $min-width != 0 {
         @media (min-width: $min-width) {
@@ -194,6 +213,19 @@ $position: (
                 .h-#{$breakpoint}-#{$i} {
                     height: #{$i + "%"};
                 }
+
+                .t-#{$breakpoint}v-#{$i} {
+                    top: #{$i + "%"};
+                }
+                .r-#{$breakpoint}v-#{$i} {
+                    right: #{$i + "%"};
+                }
+                .b-#{$breakpoint}v-#{$i} {
+                    bottom: #{$i + "%"};
+                }
+                .l-#{$breakpoint}v-#{$i} {
+                    left: #{$i + "%"};
+                }
             }
 
             @each $key, $value in $direction {
@@ -211,6 +243,12 @@ $position: (
             @each $key, $value in $justify-content {
                 .justify-content-#{$breakpoint}-#{$key} {
                     justify-content: $value;
+                }
+            }
+
+            @for $i from 0 through 5 {
+                .grid-#{$breakpoint}-#{$i} {
+                    grid-template-columns: repeat(#{$i}, minmax(0, 1fr));
                 }
             }
         }
